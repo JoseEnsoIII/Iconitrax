@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox Auto Check</title>
+</head>
+<body>
+
+    <form id="optionsForm">
+        <label>
+            <input type="checkbox" name="option" value="fb"> Facebook
+        </label>
+        <label>
+            <input type="checkbox" name="option" value="ig"> Instagram
+        </label>
+        <label>
+            <input type="checkbox" name="option" value="twitter"> Twitter
+        </label>
+        <label>
+            <input type="checkbox" name="option" value="linkedin"> LinkedIn
+        </label>
+        <label>
+            <input type="checkbox" name="option" value="snapchat"> Snapchat
+        </label>
+        <input type="text" name="customHandle" placeholder="Enter your social media">
+        <button type="button" onclick="checkAll()">Check All</button>
+    </form>
+
+    <script>
+        function checkAll() {
+            // Get all checkboxes inside the form
+            var checkboxes = document.querySelectorAll('#optionsForm input[type="checkbox"]');
+            
+            // Loop through the checkboxes and check each one
+            checkboxes.forEach(function (checkbox) {
+                checkbox.checked = true;
+            });
+        }
+    </script>
+
+</body>
+</html>
