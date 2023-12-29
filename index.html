@@ -4,6 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkbox Auto Check</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #optionsForm {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 
@@ -24,17 +66,15 @@
             <input type="checkbox" name="option" value="snapchat"> Snapchat
         </label>
         <input type="text" name="customHandle" placeholder="Enter your social media">
-        <button type="button" onclick="checkAll()">Check All</button>
+        <button type="button" onclick="toggleCheck()">Check All</button>
     </form>
 
     <script>
-        function checkAll() {
-            // Get all checkboxes inside the form
+        function toggleCheck() {
             var checkboxes = document.querySelectorAll('#optionsForm input[type="checkbox"]');
             
-            // Loop through the checkboxes and check each one
             checkboxes.forEach(function (checkbox) {
-                checkbox.checked = true;
+                checkbox.checked = !checkbox.checked;
             });
         }
     </script>
