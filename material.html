@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select All Button</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        select,
+        input[type="text"] {
+            height: 40px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px;
+            margin-left: 15px;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #fff;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form id="optionsForm">
+
+        <button type="button" onclick="selectAllOptions()">Select All</button>
+
+        <label>
+            <input type="checkbox" name="option" value="quote"> Quote of the Day
+        </label>
+
+        <label>
+            <input type="checkbox" name="option" value="trivia"> Trivia Videos
+        </label>
+
+        <label>
+            <input type="checkbox" name="option" value="motivational"> Motivational Quotes
+        </label>
+
+        <label>
+            <input type="checkbox" name="option" value="facts_vs_myths"> Facts vs. Myths
+        </label>
+
+        <br>
+
+        <label>
+            <input type="text" name="suggestion" placeholder="Enter your suggestion">
+        </label>
+
+    </form>
+
+    <script>
+        function selectAllOptions() {
+            var checkboxes = document.querySelectorAll('#optionsForm input[type="checkbox"]');
+            
+            checkboxes.forEach(function (checkbox) {
+                checkbox.checked = true;
+            });
+        }
+    </script>
+
+</body>
+
+</html>
